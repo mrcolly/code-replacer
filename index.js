@@ -2,7 +2,14 @@ const fs = require('fs-extra');
 const path = require('path');
 const rif = require('replace-in-file');
 
-const inputDir = "input"
+var args = process.argv.slice(2);
+
+if(args[0].length<1){
+    console.log("input folder is empty")
+    process.exit(1);
+}
+
+const inputDir = args[0];
 const outputDir = "output"
 const configuration = JSON.parse(fs.readFileSync("configuration/config.json"));
 
@@ -46,8 +53,6 @@ const replace = function(file, configuration) {
     
     rifConfiguration = buildRifConfiguration(file, configuration)
 
-    console.log(JSON.stringify(rifConfiguration))
-
     rif.replaceInFileSync(rifConfiguration);
 
     function buildRifConfiguration(file, configuration){
@@ -66,27 +71,26 @@ const replace = function(file, configuration) {
     }
 }
 
-if(fs.readdirSync(inputDir)){
-    console.log("input folder is empty")
+if(fs.readdirSync(inputDir).length<1){
+    console.log(`${inputDir} folder is empty`)
     process.exit(1);
 }
 
-console.log("empty output folder")
+console.log(`emptying ${outputDir} folder`)
 fs.emptyDirSync(outputDir)
 
 console.log("copying files to output")
 fs.copySync(inputDir, outputDir, { overwrite: true }, function (err) {         
     console.error(err)
+    process.exit(1);
 });
 
-console.log(`renaming files according to configuration \n${JSON.stringify(configuration, 2, 2)}`);
+console.log(`renaming files and folders according to configuration \n${JSON.stringify(configuration, 2, 2)}`);
 getAllFiles(outputDir).reverse().forEach(file =>
     rename(file, configuration)
 )
 
-console.log("replace file content")
+console.log("replacing file content")
 getAllFiles(outputDir).forEach(file =>
     replace(file, configuration)
 )
-
-
