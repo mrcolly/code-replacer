@@ -1,4 +1,4 @@
-# service generator
+# code replacer
 
 this project is designed to replace every occurrences of words, based on a configuration, in:
 + directory names
