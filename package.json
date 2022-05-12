@@ -1,0 +1,16 @@
+{
+  "name": "service_boilerplate",
+  "version": "1.0.0",
+  "description": "satispay service boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "alessio colombo",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "path": "^0.12.7",
+    "replace-in-file": "^6.3.2"
+  }
+}
