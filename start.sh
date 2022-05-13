@@ -54,7 +54,7 @@ if [ ! -z ${GIT} ]; then
     else
         git clone ${GIT}
     fi
-    
+    rm -rf .git
     cd ..
     node index.js ${GIT_INPUT}
 fi
