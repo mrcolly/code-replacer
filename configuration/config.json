@@ -1,8 +1,8 @@
 {
-    "!{service_name_underscore}" : "example_service",
-    "!{service_name_dash}" : "example-service",
-    "!{service_name_dot}" : "example.service",
-    "!{service_name_upper_camel_case}" : "ExampleService",
-    "!{service_name_lower_camel_case}" : "exampleService",
-    "!{service_name_lower_case}" : "exampleservice"
+    "___service_name_underscore___" : "example_service",
+    "___service_name_dash___" : "example-service",
+    "___service_name_dot___" : "example.service",
+    "___service_name_upper_camel_case___" : "ExampleService",
+    "___service_name_lower_camel_case___" : "exampleService",
+    "___service_name_lower_case___" : "exampleservice"
 }
