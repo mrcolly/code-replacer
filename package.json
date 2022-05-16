@@ -1,7 +1,7 @@
 {
-  "name": "service_boilerplate",
+  "name": "code-replacer",
   "version": "1.0.0",
-  "description": "satispay service boilerplate",
+  "description": "replace code in directories, file names and files' content",
   "main": "index.js",
   "author": "alessio colombo",
   "license": "ISC",
