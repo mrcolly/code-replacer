@@ -1,8 +1,8 @@
 {
-    "!{service_name_underscore}" : "e_pay",
-    "!{service_name_dash}" : "e-pay",
-    "!{service_name_dot}" : "e.pay",
-    "!{service_name_upper_camel_case}" : "EPay",
-    "!{service_name_lower_camel_case}" : "ePay",
-    "!{service_name_lower_case}" : "epay"
+    "___service_name_underscore___" : "example_service",
+    "___service_name_dash___" : "example-service",
+    "___service_name_dot___" : "example.service",
+    "___service_name_upper_camel_case___" : "ExampleService",
+    "___service_name_lower_camel_case___" : "exampleService",
+    "___service_name_lower_case___" : "exampleservice"
 }

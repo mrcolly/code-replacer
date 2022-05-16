@@ -46,20 +46,18 @@ trap cleanup EXIT
 
 if [ ! -z ${GIT} ]; then
     cd "$(dirname "$0")"
-    rm -rf ${GIT_INPUT};
-    mkdir -p ${GIT_INPUT};
-    cd ${GIT_INPUT};
+    rm -rf ${GIT_INPUT}
+    mkdir -p ${GIT_INPUT}
+    cd ${GIT_INPUT}
     if [ ! -z ${GIT_BRANCH} ]; then
         git clone ${GIT} -b ${GIT_BRANCH}
     else
         git clone ${GIT}
     fi
-    
+    ( find . -type d -name ".git") | xargs rm -rf 
     cd ..
     node index.js ${GIT_INPUT}
-fi
-
-if [ ! -z ${INPUT} ]; then
+else
     if [ ! -d ${INPUT} ]; then
         echo "folder ${INPUT} does not exist!"
         exit 1
