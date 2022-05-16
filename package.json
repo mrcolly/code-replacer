@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "satispay service boilerplate",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "author": "alessio colombo",
   "license": "ISC",
   "dependencies": {
