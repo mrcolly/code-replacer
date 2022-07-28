@@ -19,7 +19,7 @@ const getAllFiles = function(dirPath, arrayOfFiles) {
     arrayOfFiles = arrayOfFiles || []
   
     files.forEach(file => {
-      let filename = dirPath + "/" + file
+      let filename = `${dirPath}/${file}`
       if (fs.statSync(filename).isDirectory()) {
         arrayOfFiles.push(path.join(__dirname, filename))
         arrayOfFiles = getAllFiles(filename, arrayOfFiles)
@@ -94,5 +94,9 @@ console.log("replacing file content")
 getAllFiles(outputDir).forEach(file =>
     replace(file, configuration)
 )
+
+console.log("renaming base directory")
+base_dir = fs.readdirSync(outputDir)[0]
+fs.renameSync(`${outputDir}/${base_dir}`, `${outputDir}/${configuration[Object.keys(configuration)[0]]}`)
 
 console.log("done!")
